@@ -1,0 +1,32 @@
+{
+  "name": "served",
+  "version": "0.1.0",
+  "description": "Create simple HTTP servers for any directory.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/enjalot/served.git"
+  },
+  "keywords": [
+    "http",
+    "http-server",
+    "server"
+  ],
+  "author": "Ian Johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enjalot/served/issues"
+  },
+  "homepage": "https://github.com/enjalot/served#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.4"
+  },
+  "dependencies": {
+    "d3": "^3.5.12",
+    "express": "^4.13.3"
+  }
+}
