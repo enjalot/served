@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "d3": "^3.5.12",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "serve-index": "^1.7.2"
   }
 }

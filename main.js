@@ -1,3 +1,4 @@
+var path = require('path')
 const electron = require('electron');
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
@@ -70,20 +71,29 @@ app.on('ready', function() {
 
   var port = 4241;
   var express = require('express');
+  var serveIndex = require('serve-index')
 
   var servers = {};
 
   ipcMain.on('new-server', function(event, file) {
     var app = express();
-    if(servers[file.path]) return;
+    var filepath = file.path;
+    console.log(filepath, path.basename(filepath), file.name)
+    if(path.basename(filepath).indexOf('.') >= 0) {
+      // grab the directory from the path, ignoring the filename
+      filepath = path.dirname(filepath);
+    }
+    console.log("filepath", filepath)
+    if(servers[filepath]) return;
 
     port += 1;
-    app.use(express.static(file.path));
+    app.use(express.static(filepath));
+    app.use(serveIndex(filepath, {'icons': true}))
     var server = app.listen(port, function() {
-      console.log("listening on", port, "for file", file)
+      console.log("listening on", port, "for file", filepath)
     })
-    servers[file.path] = server;
-    event.sender.send('new-server', file.path, port);
+    servers[filepath] = server;
+    event.sender.send('new-server', filepath, port);
   });
 
   ipcMain.on('close-server', function(event, path) {

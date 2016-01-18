@@ -1,3 +1,4 @@
+var path = require('path')
 var d3 = require('d3');
 var ipc = require("electron").ipcRenderer
 
