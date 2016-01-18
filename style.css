@@ -1,32 +1,43 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #e5b46a;
+  font-family: Helvetica, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #header {
-  width: 110%;
+  width: 100%;
   height: 25px;
   background-color: #333;
+  position: fixed;
+  z-index: 100;
 }
 
 #content {
   position: absolute;
   width: 100%;
-  height: calc(100% - 25px);
-  background-color: #e5b46a;
+  height: 100%;
   color: #12184e;
-}
-#new-file {
-  margin: 20px 10px;
+  top: 25px;
 }
 
+#servers {
+}
 .server {
-  margin: 10px 0px 10px 60px;
+  margin: 0px 0px 0px 60px;
+  padding-bottom: 20px;
   font-family: Open Sans;
-  width: 100%;
   float: left;
   clear: left;
 }
-
+a, a:hover, a:visited {
+  color: #12184e;
+}
 .server .port, .port:hover, .port:visited {
   float: left;
   font-size: 42px;
@@ -43,9 +54,64 @@ body {
 
 .close {
   float: left;
-  font-size: 35px;
-  margin-left: -30px;
-  margin-top: 5px;
+  font-size: 25px;
+  margin-left: -20px;
+  margin-top: 20px;
   color: #a00d23;
   text-decoration: none;
+}
+
+.label {
+  padding-right: 40px;
+  font-size: 14px;
+  font-family: Helvetica, sans-serif;
+}
+#new-file-form {
+  padding-bottom: 15px;
+}
+#new-file {
+  width: 83px;
+  height: 30px;
+  margin-top: 20px; 
+  margin-left: 30px;
+  margin-right: 15px;
+  outline: none;
+  float:left;
+}
+#new-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#new-file::before {
+  content: 'Select file';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+#new-file:hover::before {
+  border-color: black;
+}
+#new-file:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+#credits {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 5px;
+  font-size: 10px;
+  color: #eee;
+  background-color: #333;
+}
+#credits a, #credits a:visited {
+  color: #eee;
 }

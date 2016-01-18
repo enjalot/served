@@ -6,6 +6,8 @@ Intended to be as easy to use as possible so web developers who aren't comfortab
 
 ## Development
 
+`npm install`  
+`npm start`
 
 ### files
 
