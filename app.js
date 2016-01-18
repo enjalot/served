@@ -16,7 +16,6 @@ function handleFiles(evt) {
   if(!files[0]) return; // TODO: error
 
   var file = files[0];
-  console.log("file", file.name, file.path)
   ipc.send("new-server", {name: file.name, path: file.path})
   // clear out the file once we've read it in
 }
@@ -48,12 +47,28 @@ function renderServers() {
   var sdivs = d3.select("#servers").selectAll("div.server")
     .data(servers)
 
+  sdivs.exit().remove();
+
   var sdivsEnter = sdivs.enter().append("div").classed("server", true)
-  sdivsEnter.append("span").classed("path", true)
-    .text(function(d) { return d.path })
+
+  sdivsEnter.append("a").classed("close", true)
+    //.text("x")
+    .text("ⓧ")
+    .attr("href", "#")
+    .on("click", function(d,i) {
+      console.log("closing", d.path)
+      ipc.send('close-server', d.path)
+      servers.splice(i, 1);
+      renderServers()
+    })
+  
   sdivsEnter.append("a").classed("port", true)
     .text(function(d) {  return "http://localhost:" + d.port })
     .attr("href", function(d) {  return "http://localhost:" + d.port })
     .attr("target", "_blank")
+
+  sdivsEnter.append("span").classed("path", true)
+    .text(function(d) { return d.path })
+  
 
 }

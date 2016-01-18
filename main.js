@@ -71,15 +71,25 @@ app.on('ready', function() {
   var port = 4241;
   var express = require('express');
 
+  var servers = {};
+
   ipcMain.on('new-server', function(event, file) {
     var app = express();
+    if(servers[file.path]) return;
 
     port += 1;
     app.use(express.static(file.path));
-    app.listen(port, function() {
+    var server = app.listen(port, function() {
       console.log("listening on", port, "for file", file)
     })
+    servers[file.path] = server;
     event.sender.send('new-server', file.path, port);
   });
 
+  ipcMain.on('close-server', function(event, path) {
+    console.log("close!", path)
+    if(!servers[path]) return;
+    servers[path].close();
+    delete servers[path];
+  })
 });
