@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SERVED</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Stylesheets -->
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Open Sans, sans-serif;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    h1, h2, h3 {
+      width: 100%;
+      text-align: center;
+    }
+    #content {
+      width: 800px;
+      margin: 0px auto;
+    }
+    img {
+      margin: 0px auto;
+      display: block;
+    }
+
+    .description {
+      text-align: center;
+    }
+
+    .os {
+      float: left;
+      margin: 0 20px;
+      padding: 20px;
+      width: 175px;
+    }
+    #downloads {
+      width: 100%;
+      height: 180px;
+      text-align: center;
+      padding: 10px 0 40px 0;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      background-color: #FFEACB;
+      border-radius: 10px;
+    }
+    .title {
+      font-size: 30px;
+      font-weight: bold;
+
+    }
+    #downloads a {
+    }
+    a, a:visited {
+      color: #018;
+      font-weight: bold;
+    }
+
+    #credits {
+      text-align: center;
+      width: 800px;
+      bottom: 10px;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Served</h1>
+      <div class="description">
+        A simple utility for serving up directories with an HTTP server. 
+        The motivation is to give people a way to start using <a target=_blank href="http://d3js.org">d3.js</a> without <a target=_blank href="https://github.com/mbostock/d3/wiki#using">dealing with the command line.</a>
+      </div>
+      <img src="images/served-ui.png"  width="600px"/>
+      <div id="downloads">
+        <div class="title">Downloads</div>
+        <div class="os">
+        <h3>Mac OS X</h3>
+        <a href="https://s3-us-west-2.amazonaws.com/building-blocks/served/dist/Mac OS X/Served.zip" target=_blank>Served.zip</a>
+        </div>
+
+        <div class="os">
+        <h3>Windows</h3>
+        <a href="https://s3-us-west-2.amazonaws.com/building-blocks/served/dist/Windows/Served-x64.exe" target=_blank>Served-x64.exe</a><br/><br/>
+        <a href="https://s3-us-west-2.amazonaws.com/building-blocks/served/dist/Windows/Served-ia32.exe" target=_blank>Served-ia32.exe</a>
+        </div>
+
+        <div class="os">
+        <h3>Linux</h3>
+        <a href="https://s3-us-west-2.amazonaws.com/building-blocks/served/dist/Linux/Served-ia32" target=_blank>Served-x64</a><br/><br/>
+        <a href="https://s3-us-west-2.amazonaws.com/building-blocks/served/dist/Linux/Served-ia32" target=_blank>Served-ia32</a>
+        </div>
+      </div>
+
+      <div class="description">
+        When you are just getting started with web development, dealing with the command line can waste a lot of energy when
+        you'd rather be writing some JavaScript and trying out some sweet d3 functions on your data. Just drag-and-drop the folder
+        that has your d3 code and click the link that comes up!
+      </div>
+      <br>
+      <br>
+      <img src="images/served-dragdrop.gif"  width="800px"/>
+        
+      <div id="credits">
+        an <a target="_blank" href="http://github.com/enjalot/served">open source</a> tool by <a target="_blank" href="http://twitter.com/enjalot">@enjalot</a>
+      </div>
+    </div>
+  </body>
+</html>
