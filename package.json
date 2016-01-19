@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/electron .",
-    "bundle": "./node_modules/.bin/electron-packager"
+    "package": "./node_modules/.bin/electron-packager . Served --all --version=0.36.4 --ignore=dist --out=dist"
   },
   "repository": {
     "type": "git",

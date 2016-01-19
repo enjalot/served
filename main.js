@@ -103,7 +103,9 @@ app.on('ready', function() {
       if(!servers[path]) return;
       servers[path].server.close();
       delete servers[path];
-      saveServers(servers);
+      setTimeout(function() {
+        saveServers(servers);
+      },10)
     })
   });
 });
