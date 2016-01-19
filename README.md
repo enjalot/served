@@ -16,7 +16,7 @@ npm start
 
 We package up the app using [electron-packager](https://github.com/maxogden/electron-packager), this command builds for all platforms:
 ```
-npm run bundle -- . Served --all --version=0.36.4
+npm run package
 ```
 
 ### files
