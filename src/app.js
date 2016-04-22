@@ -62,14 +62,18 @@ function renderServers() {
       servers.splice(i, 1);
       renderServers()
     })
-  
+
+  sdivsEnter.append("a").classed("path", true)
+    .text(function(d) { return d.path })
+    .attr("href", function(d) {  return "http://localhost:" + d.port })
+    .attr("target", "_blank")
+
   sdivsEnter.append("a").classed("port", true)
     .text(function(d) {  return "http://localhost:" + d.port })
     .attr("href", function(d) {  return "http://localhost:" + d.port })
     .attr("target", "_blank")
 
-  sdivsEnter.append("span").classed("path", true)
-    .text(function(d) { return d.path })
-  
+
+
 
 }

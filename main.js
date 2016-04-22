@@ -64,7 +64,7 @@ app.on('ready', function() {
     require('shell').openExternal(url);
   });
 
-  //webContents.openDevTools();
+  webContents.openDevTools();
 
   webContents.on('did-finish-load', function() {
     // We know the webpage is loaded, so we can start interacting with it now
